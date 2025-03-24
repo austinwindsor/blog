@@ -62,15 +62,15 @@ Bicycle Hill
 You can also purchase gear from:    
 Decathlon    
 [https://decathlon.tw](https://decathlon.tw)    
-台北山水戶外休閒用品專門店
-[https://maps.app.goo.gl/UiUMDUHdoHwZqLDm7](https://maps.app.goo.gl/UiUMDUHdoHwZqLDm7)
+台北山水戶外休閒用品專門店    
+[https://maps.app.goo.gl/UiUMDUHdoHwZqLDm7](https://maps.app.goo.gl/UiUMDUHdoHwZqLDm7)    
 Prince Outdoor    
 [https://maps.app.goo.gl/uWjb964GUeuEyZQY9](https://maps.app.goo.gl/uWjb964GUeuEyZQY9)    
 
 **Sample Packing List**    
 Bag 1:    
 * River tracing shoes
-* Plastic bag to carry them in. No holes.
+* Plastic bag to carry them in. No holes.    
 Bag 2:    
 * Water proof bag
 * Workout shorts
@@ -79,7 +79,7 @@ Bag 2:
 * Water (1L)
 * Two rice balls or your preferred lunch
 * Back up clothes (keep it small and easy to pack)    
-***When we're about to hike, you can switch from slippers to river tracing shoes, then pack bag 1 in bag 2.*** 
+***When you're about to hike, you can switch from slippers to river tracing shoes, then pack bag 1 in bag 2.*** 
 
 ---
 

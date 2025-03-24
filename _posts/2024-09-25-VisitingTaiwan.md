@@ -2,7 +2,7 @@
 layout: post
 title: "What to Know Before Visiting Taipei: A Guide for First-Time Visitors"
 author: austin
-categories: [ travel, guide , food]
+categories: [ travel, guide , food , Taiwan]
 image: assets/images/taipei101.jpg
 featured: false
 ---
