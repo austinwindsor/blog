@@ -3,7 +3,7 @@ layout: post
 title: "River Tracing in Taiwan: My Brief Guide to One of Taiwan’s Best Outdoor Adventures"
 author: austin
 categories: [ travel, adventure , outdoors , Taiwan ]
-image: assets/images/river-tracing-taiwan.png
+image: assets/images/river-tracing.JPG
 featured: false
 ---
 
