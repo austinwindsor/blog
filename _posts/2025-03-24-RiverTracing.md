@@ -8,7 +8,7 @@ featured: false
 ---
 
 {{:.image-caption}}
-*Image courtesy of taiwanadventures.com*
+*Climbing a waterfall, personal image*
 
 ### What is River Tracing?
 

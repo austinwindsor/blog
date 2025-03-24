@@ -3,12 +3,12 @@ layout: post
 title: "What to Know Before Visiting Taipei: A Guide for First-Time Visitors"
 author: austin
 categories: [ travel, guide , food]
-image: assets/images/river_trace.jpg
+image: assets/images/taipei101.jpg
 featured: false
 ---
 
 {:.image-caption}
-*Climbing a waterfall. Personal photo*
+*View of Taipei 101 from Elephant Mountain. Image courtesy of yahoo!Life*
 
 ### A Comprehensive Guide to Taipei for First-Time Visitors
 
