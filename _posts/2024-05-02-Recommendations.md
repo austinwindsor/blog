@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Reducing Customer Churn with Personalized Recommendations: A Data-Driven Approach"
+title: "Reducing Streaming Churn with Personalized Recommendations"
 author: austin
-categories: [ development, software , cloud , AI ]
+categories: [ development, software, cloud, AI ]
 image: assets/images/recommendations.jpg
 featured: True
 ---
@@ -10,61 +10,59 @@ featured: True
 {:.image-caption}
 *Image courtesy of medium.com*
 
-In today’s digital landscape, customer engagement is paramount. Our client faces a significant challenge: customers are churning due to a lack of engagement on their platform. This disengagement places undue stress on the business, as efforts to generate interesting content are not reaching the appropriate audience.
+This project focuses on improving customer engagement for a streaming platform by replacing static or weakly related content recommendations with a more personalized recommendation workflow using AWS Personalize and an ETL pipeline for training data.
 
-## Business Objective
+## Business Problem
 
-### Business Problem
+Subscription platforms need users to keep finding relevant content. When users do not see titles that match their interests, they are less likely to return, less likely to explore the catalog, and more likely to churn.
 
-In today’s digital landscape, customer engagement is paramount. Our client faces a significant challenge: customers are churning due to a lack of engagement on their platform. This disengagement places undue stress on the business, as efforts to generate interesting content are not reaching the appropriate audience.
+The existing recommendation experience had two practical issues:
 
-### Business Objective
+1. **Marketing engagement was limited** because outreach depended partly on third-party platforms with inconsistent open rates.
+2. **Similar-video recommendations were inconsistent**, which made some playlists feel generic or unrelated to the user’s actual behavior.
 
-Our primary objective is to direct customers to relevant products and content to increase their engagement and, consequently, decrease the subscription churn rate. By tailoring recommendations to individual customer preferences, we can enhance user experience and foster long-term loyalty.
+## Objective
 
-### Challenges
+The goal was to direct users toward more relevant videos, increase engagement, and reduce subscription churn risk. A useful recommendation system needed to work with existing product constraints while giving engineers a clean way to retrieve ranked recommendations for the website.
 
-Several challenges impede our progress:
-1. **Third-Party Marketing Platform**: Marketing efforts are conducted on a third-party platform with suboptimal opening rates.
-2. **Inconsistent Recommendations**: The current system for generating similar video playlists provides inconsistent and irrelevant product recommendations, failing to captivate the audience.
+## Technical Approach
 
-### Our Approach
+### Step 1: Improve Similar Videos with AWS Personalize
 
-To tackle these challenges, we will implement a robust solution using AWS Personalize. Here’s a detailed outline of our approach:
+AWS Personalize can use user-item interaction data to generate recommendations based on behavioral patterns. For a streaming product, useful interactions may include plays, watch duration, completion rate, genre preference, recency, and repeated engagement with similar content.
 
-#### Step 1: Update the Similar Videos Playlist with AWS Personalize
+### Step 2: Build an ETL Pipeline for Training Data
 
-AWS Personalize is a powerful tool that leverages machine learning to create personalized recommendations. By integrating this tool, we can significantly improve the relevance of the video recommendations.
+The ETL pipeline prepares the interaction dataset needed for model training. The pipeline extracts watch and user activity data, transforms it into a schema suitable for AWS Personalize, and loads it into the training workflow.
 
-#### Step 2: Create an ETL Pipeline to Generate Training Data
+Typical fields include:
 
-A crucial component of our solution is the creation of an ETL (Extract, Transform, Load) pipeline. This pipeline will:
-- **Extract** data from various sources.
-- **Transform** the data into a suitable format for training machine learning models.
-- **Load** the processed data into a data warehouse for easy access and analysis.
+- `USER_ID`
+- `ITEM_ID`
+- `TIMESTAMP`
+- `EVENT_TYPE`
+- `EVENT_VALUE`
 
-#### Step 3: Follow the Machine Learning Evaluation Process
+The quality of this dataset matters as much as the model choice. Poorly defined events or noisy labels can produce recommendations that look technically valid but feel irrelevant to users.
 
-To ensure we select the best-performing model, we will:
-- Iterate through different machine learning models and parameters.
-- Evaluate each model using standard metrics.
-- Continuously refine our approach based on the evaluation results.
+### Step 3: Evaluate Recommendation Quality
 
-#### Step 4: Promote the Final Model to Production
+The recommendation workflow should be evaluated before being promoted to production. Offline metrics can help compare model configurations, but product impact ultimately needs to be validated with engagement metrics such as click-through rate, watch starts, watch time, return rate, or churn-related outcomes.
 
-Once we identify the best-performing model, we will:
-- Promote it to the production environment.
-- Grant website engineers permissions to access the model in real-time, enabling them to populate the similar videos playlist dynamically.
+### Step 4: Promote the Final Model to Production
 
-### Next Steps
+Once a model configuration performs well enough, the recommendation campaign can be exposed to website engineers. The product can then request ranked recommendations in real time or near-real time and use those results to populate similar-video playlists.
 
-To further enhance the platform, we recommend:
-- **Creating Personalized Recommendations**: Tailor content for customers’ favorite categories and the trendiest content.
-- **Automatically Generating Playlist Titles**: Use machine learning to create attention-grabbing playlist titles.
-- **Personalizing Customer Search Results**: Adjust search results based on their relevance to individual customer profiles, ensuring a more personalized experience.
+## Possible Extensions
 
-### Conclusion
+The same foundation can support additional recommendation surfaces:
 
-By leveraging AWS Personalize and implementing a robust ETL pipeline, we can transform the customer experience on our client’s platform. Personalized recommendations will not only increase engagement but also reduce subscription churn rates. Our data-driven approach ensures that content reaches the right audience, fostering long-term customer loyalty and business growth.
+- Personalized rows for favorite categories.
+- Trending content adjusted by user segment.
+- Automatically generated playlist titles.
+- Personalized search ranking.
+- Filters for subscription tier, content availability, region, or release recency.
 
-Contact us today to learn how we can help you implement a personalized recommendation system tailored to your business needs. Let’s work together to reduce churn and enhance customer engagement through innovative, data-driven solutions.
+## Conclusion
+
+A recommendation system is not just a model. It is a product workflow that depends on clean interaction data, clear evaluation metrics, infrastructure for serving results, and product surfaces where recommendations can influence behavior. AWS Personalize is useful because it reduces the amount of custom modeling infrastructure needed, but the strategic work remains in defining the right events, constraints, and success metrics.

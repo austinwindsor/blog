@@ -5,6 +5,7 @@ author: austin
 categories: [ cooking, recipes, food ]
 image: assets/images/spices.png
 featured: false
+hidden: true
 ---
 
 {:.image-caption}
@@ -15,18 +16,18 @@ This post is to detail for my family and friends the various meals that I cook. 
 # Food
 
 ## Chinese
-Chinese food is heavily influence by the idea of the 5 tastes: sweet, spicy, salty, sour, and umami. A *good* dish contains all these 5 flavors in varying degrees. Like any of the other regions, Chinese cuisine is incredilby varied and ahrd to generalize as whole. In fact, China has 8 distinct culinary traditions called the [八大菜系 or Eight Treasures](https://en.wikipedia.org/wiki/Chinese_regional_cuisine). Their respective provinces are Cantonese, Sichuan, Anhui, Shandong, Fujian, Jiangsu, Hunan, Zhejiang.    
+Chinese food is heavily influenced by the idea of the 5 tastes: sweet, spicy, salty, sour, and umami. A *good* dish contains all these 5 flavors in varying degrees. Like any of the other regions, Chinese cuisine is incredibly varied and hard to generalize as whole. In fact, China has 8 distinct culinary traditions called the [八大菜系 or Eight Treasures](https://en.wikipedia.org/wiki/Chinese_regional_cuisine). Their respective provinces are Cantonese, Sichuan, Anhui, Shandong, Fujian, Jiangsu, Hunan, Zhejiang.    
 I primarily explore the Sichuan food as I love the spicy and numbing effect of the red and Sichuan peppercorns.    
 * ***[麻婆豆腐](https://thewoksoflife.com/ma-po-tofu-real-deal/)*** *(Mapo Tofu)*    
 &nbsp;This spicy and slightly numbing dish is a staple of my chinese food and contains tofu and ground pork as its main ingredients.    
 * ***Soup lol***    
-&nbsp;I don't really know how else to call this. It's just chicken bouillon with bak choi, a marinated egg, noodles, and mushrooms. It's what I often cook when I don't feel like doing too much.  
+&nbsp;I don't really know how else to call this. It's just chicken bouillon with bok choy, a marinated egg, noodles, and mushrooms. It's what I often cook when I don't feel like doing too much.  
 * ***[三杯鸡](https://rasamalaysia.com/three-cups-chicken-recipe/)*** *(Three Cup Chicken)*    
-&nbsp;This incredibly fragrant dish has a soy sauce, Chinese cooking wine, and sugar based glaze with copious amounts of basil, ginger and garlic. Shitake mushrooms can either substitute or be added in addition to the chicken.        
+&nbsp;This incredibly fragrant dish has a soy sauce, Chinese cooking wine, and sugar based glaze with copious amounts of basil, ginger and garlic. Shiitake mushrooms can either substitute or be added in addition to the chicken.        
 
 ## Indian
 Generally speaking, Indian cuisine is marked by complex and expert use of spices. I don't have much experience with other South Asian cuisines, although I believe they sit in a gradient between other cultural regions in proportion to their physical proximity (i.e. the further west one goes to Iran, the more influence by Persian cooking). Even within India, the cuisine is incredibly varied, particularly between the North and South divide, so it's hard to make strong generalizations other than some core spices and cooking methods.     
-The majority of India is Hindu, which invites a ovo-vegetarian (i.e. pure vegetarian + eggs) lifestyle, so generally, there meals are heavy in vegetables, legumes, and grains. Not only are the eating habits incredibly healthy, but also environmentally sustainable, for the cuisine leverages ingredients with smaller carbon footprints (e.g. vegetables, legumes, grains, etc.) and also leverages what many other cuisines considers scraps to reduce food waster (e.g. watermelon rind and banana peal). While the latter may not be incredibly common, they still exist more so than in other cuisines.
+The majority of India is Hindu, which invites an ovo-vegetarian (i.e. pure vegetarian + eggs) lifestyle, so generally, their meals are heavy in vegetables, legumes, and grains. Not only are the eating habits incredibly healthy, but also environmentally sustainable, for the cuisine leverages ingredients with smaller carbon footprints (e.g. vegetables, legumes, grains, etc.) and also leverages what many other cuisines consider scraps to reduce food waste (e.g. watermelon rind and banana peel). While the latter may not be incredibly common, they still exist more so than in other cuisines.
 I personally heard from my high school friend to always toast the spices quickly before cooking the remaining food, so as the flavors meld in the oil and thereby spread to every corner of the dish.
 * ***[Red Dhal](https://holycowvegan.net/instant-pot-masoor-dal-red-lentil-dal/)*** *(Red Lentils)*     
 &nbsp;This Indian staple has a base of red lentils (*Dhal* in Hindi) with cumin, coriander, turmeric, star anise *(optional)* toasted in coconut oil.
@@ -46,7 +47,7 @@ I had no idea of this fusion until my former roommate introduced me to Gobi Manc
 ## Italian
 This cuisine has become a staple in the US and has a great diversity within its cuisine, similar to India in that the cuisine strongly split along the North and South divide. My personal favorites are anything based in olive oil and vegetables, which I believe comes from the South, whereas the North uses more creams and tomato.    
 * ***Caprese***   
-&nbsp;Slices of tomato with extra virgin olive oil, balsamic vinegar, and goat cheese (instead of mozzeralla as is traditional), garnished with basil.      
+&nbsp;Slices of tomato with extra virgin olive oil, balsamic vinegar, and goat cheese (instead of mozzarella as is traditional), garnished with basil.      
 
 ## Japanese
 Despite working in Japan for a summer, I still don't cook nearly enough Japanese food. Below are the few I cook:    
@@ -57,7 +58,7 @@ Despite working in Japan for a summer, I still don't cook nearly enough Japanese
 * ***Japanese Curry***    
 &nbsp;Japan's take on curry. I really just use the instant Golden Curry packets, so hardly cooking at all. Another staple of mine.    
 * ***[Musubi](https://cooking.nytimes.com/recipes/1020160-spam-musubi)*** *(Spam Rice Sandwiches)*    
-&nbsp;This Japanese-Hawaiian dish is super rich from all the yummy fats in the spam. It's a pretty simple meal to make, and Ill sometimes add additional ingredients like spinach or kimchi.     
+&nbsp;This Japanese-Hawaiian dish is super rich from all the yummy fats in the spam. It's a pretty simple meal to make, and I’ll sometimes add additional ingredients like spinach or kimchi.     
 
 ## Korean    
 This cuisine never ceases to amaze me. Korean cuisine has a strong command over both vegetables and meats, while also leveraging fermenting for the hundreds of different kinds of kimchi it's developed. It's still incredibly easy to eat healthy by way of plates with good ratio of vegetable to meat and many fermented products. I can't wait to explore deeper into Korean fermentation techniques.

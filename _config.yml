@@ -1,7 +1,7 @@
 # Site
-name: "The Art of Connecting"
+name: "Austin Windsor Writing"
 title: "Austin Windsor"
-description: "I contain multitudes. Here are their stories."
+description: "Technical notes, case studies, and field writing on data science, cloud analytics, machine learning, and life in Taiwan."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 mainurl: "https://austinwindsor.github.io"
@@ -19,7 +19,7 @@ authors:
     display_name: Austin
     avatar: 'assets/images/austin_square1.jpg'
     email: 
-    description: "Cloud Data Scientist at W Data Services"
+    description: "Data Scientist and Analytics Engineer focused on applied machine learning, AWS data systems, recommender systems, and multilingual analytics."
 
 # Plugins
 plugins:

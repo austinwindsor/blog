@@ -1,3 +1,4 @@
+{% unless post.hidden == true %}
 <!-- begin post -->
 {% assign author = site.authors[post.author] %}
 <div class="col-md-6 mb-30px">
@@ -57,3 +58,4 @@
     </div>
 </div>
 <!-- end post -->
+{% endunless %}

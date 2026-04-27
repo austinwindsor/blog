@@ -12,7 +12,7 @@ featured: false
 
 ### A Comprehensive Guide to Taipei for First-Time Visitors
 
-Here's a quick non-comprehensive introduuction to visting Taiwan for my friends! Taipei, the vibrant capital of Taiwan, offers a fascinating blend of tradition, modernity, nature, and urban life. While it's a decently internationalized city, what especially stands out as a winner is modern facilities, conveniences, transportation, healthcare, all within a few minutes ride of incredible nature. While some may see Taiwan as not as large or international as other cities, such as Shanghai or Tokyo, this also serves to connect you more with local culture: often the real goal of frequent travelers. 
+Here's a quick non-comprehensive introduction to visiting Taiwan for my friends! Taipei, the vibrant capital of Taiwan, offers a fascinating blend of tradition, modernity, nature, and urban life. While it's a decently internationalized city, what especially stands out as a winner is modern facilities, conveniences, transportation, healthcare, all within a few minutes ride of incredible nature. While some may see Taiwan as not as large or international as other cities, such as Shanghai or Tokyo, this also serves to connect you more with local culture: often the real goal of frequent travelers. 
 
 Whether you're a seasoned traveler or visiting Taiwan for the first time, there are several things you should know to make the most of your trip. From areas to stay to must-try foods and logistical tips, this guide will help you navigate the dynamic city of Taipei.
 
@@ -34,9 +34,9 @@ Whether you're a seasoned traveler or visiting Taiwan for the first time, there 
 
 ## Quick Background of Taiwan
 
-Taiwan has a rich history with strong mixtures from local indigenous peoples, Japan and China, as well as weaker inifluences Spain, Holland, and even Portugal. For example, an older name of for Taiwan is Formosa, rooted in the Portugese word for Beautiful Island. In recent history, different diasporas have also brought Vietnamese, Indonesia, and Bhurmese people to the island. 
+Taiwan has a rich history with strong influences from local indigenous peoples, Japan and China, as well as weaker influences from Spain, Holland, and even Portugal. For example, an older name for Taiwan is Formosa, rooted in the Portuguese word for Beautiful Island. In recent history, different diasporas have also brought Vietnamese, Indonesian, and Burmese people to the island. 
 
-Taiwan also speaks many different languages! First and foremost is Mandarin (Standard Chinese), followed by Taiwanese. These are not to be confused! Mostly the older generation speaks Taiwanese but young people often use it for slang or cursing. Fewer and fewer people speak Taiwanese in Taipei, but it's more common in the south. Beyond these, indigenous people's also have their own langauges. Interstingly enough, some of these indigenous languages are also related to Austronesian peoples. There's currently a theory that Austronesian peoples originated from Taiwan!
+Taiwan also speaks many different languages! First and foremost is Mandarin (Standard Chinese), followed by Taiwanese. These are not to be confused! Mostly the older generation speaks Taiwanese but young people often use it for slang or cursing. Fewer and fewer people speak Taiwanese in Taipei, but it's more common in the south. Beyond these, indigenous people's also have their own languages. Interestingly enough, some of these indigenous languages are also related to Austronesian peoples. There's currently a theory that Austronesian peoples originated from Taiwan!
 
 ## Areas to Stay
 
@@ -62,14 +62,14 @@ Before you arrive, here are a few important things to take care of:
 
 - **Tourist Subsidy**: Taiwan occasionally offers subsidies for tourists visiting the island. Check for any active programs before your trip to save money. Please read here for more details to potentially win NTD$5,000: [How to apply for Taiwan's NT$5,000 prize for foreign tourists](https://taiwannews.com.tw/news/4879972)
 - **Power Outlets**: Taiwan uses two-prong Type A outlets (the same as in the US), so bring an adapter if necessary, especially if your devices have a three-prong plug. 
-- **International Driver’s License**: If you plan on renting a scooter or car, make sure you have an international driver’s license. You'll need to provde both your passport and your international driver's license to be eligible. This is essential if you're considering the popular activity 環島 Cycle Around Taiwan.
-- **Social Media**: Most every Taiwanese person uses [LINE](https://line.me/tw/) in some form or fashion. You may encounter some restuarants or other facilities that may anticipate you already have LINE. I recommend first downloading and setting it up. Otherwise, restaurants/cafes heavily rely upon Google Maps and Instagram.
+- **International Driver’s License**: If you plan on renting a scooter or car, make sure you have an international driver’s license. You'll need to provide both your passport and your international driver's license to be eligible. This is essential if you're considering the popular activity 環島 Cycle Around Taiwan.
+- **Social Media**: Most every Taiwanese person uses [LINE](https://line.me/tw/) in some form or fashion. You may encounter some restaurants or other facilities that may anticipate you already have LINE. I recommend first downloading and setting it up. Otherwise, restaurants/cafes heavily rely upon Google Maps and Instagram.
 
 ## Arrival Essentials
 
 Upon landing in Taipei, you’ll want to take care of a few things right away:
 
-- **SIM Card**: Get a local SIM card at the airport to stay connected throughout your trip. Taiwan offers affordable data plans. There are some options at the airport. The price differences aren't worth the trouble of waiting until getting to the city to claim. Althernatively, you can also consider an [[eSIM card](https://english.taiwanmobile.com/product/eSIMservice.html).
+- **SIM Card**: Get a local SIM card at the airport to stay connected throughout your trip. Taiwan offers affordable data plans. There are some options at the airport. The price differences aren't worth the trouble of waiting until getting to the city to claim. Alternatively, you can also consider an [[eSIM card](https://english.taiwanmobile.com/product/eSIMservice.html).
 - **Tourist Subsidy**: If applicable, make sure to claim any tourist subsidies you are eligible for, which can include transportation or accommodation discounts. Read the link provided above for more details.
 
 ## Logistics: Getting Around
@@ -96,7 +96,7 @@ From luxury hotels to budget-friendly options, Taipei has accommodation to suit 
 Taipei is famous for its food scene, and there are several dishes you must try during your visit. For a full list of all the savory food suggestions, you can look at my [Savory Google Maps list](https://maps.app.goo.gl/YWEgZXt26MLGjN5k6); [Sweet Google Maps List](https://maps.app.goo.gl/S2q3k5vri3t2vffs5). A less overwhelming alternative is simply looking below for a few suggestions.
 
 ### Savory
-- **Taiwanese Breakfast**: Taiwanese breakfast is not joke. An incredible way to start the day. I would recommennd your choice of egg pancake 蛋餅, taro patty　芋頭糕, soy milk　豆漿, pastry sandwich with an egg/fried fritter 燒餅加聰蛋油條. Some recommend places that requiring queuing an hour early in the morning, but any place near you is where you'd get a more local experience.
+- **Taiwanese Breakfast**: Taiwanese breakfast is not joke. An incredible way to start the day. I would recommend your choice of egg pancake 蛋餅, taro patty　芋頭糕, soy milk　豆漿, pastry sandwich with an egg/fried fritter 燒餅加聰蛋油條. Some recommend places that requiring queuing an hour early in the morning, but any place near you is where you'd get a more local experience.
 - **Xiao Long Bao 小籠包**: Soup dumplings, made famous by Din Tai Fung, are a must-eat in Taipei, most especially the truffle soup dumplings which are only sold in Taiwan's Din Tai Fung.
 - **Beef Noodle Soup 牛肉麵**: Taiwan’s national dish, rich in flavor and comfort. Tbh, the two following links below both have good Beef Noodle Soup.
 - **Beef Bone Broth Soup 清燉牛肉麵**: This rich and hearty soup is made by simmering beef bones for hours, resulting in a flavorful, nutrient-dense broth. Often served with tender slices of beef and vegetables, it’s a comforting dish that showcases the depth of Taiwanese cuisine. Check out my favorite at [18冠軍牛肉麵](https://maps.app.goo.gl/tFHvx1Zqe7g3TqFs8).
@@ -120,8 +120,8 @@ Taipei is famous for its food scene, and there are several dishes you must try d
 - **Tiramisu**: Not Taiwanese at all, but the best tiramisu I've had in the whole world is [here](https://maps.app.goo.gl/PefFTVuBiEgTNZibA). Very heavy handed on the alcohol. Go ahead and order a orange rum hot chocolate to go with it as well! They also recognize me here, so lemme know how they react if you show a picture haha!
 - **Mochi on Shaved Ice**: This dessert plays on difference in textures and temperatures with freshly boiled chewy mochi on top of freshly shaved snow ice. Traditionally, it will come with black sesame and/or peanut flavors. You can check out my favorite which also comes with osmantus syrup at [Yu Pin Yuan Iced and Hot Tangyuan 御品元冰火湯圓](https://maps.app.goo.gl/uz1jGu62nAoXHmzz5).
 - **Peanut Cilantro Ice Cream Roll**: A unique Taiwanese dessert, this refreshing treat wraps scoops of ice cream, shaved peanut brittle, and fresh cilantro in a thin crepe. The combination of flavors and textures is surprisingly delicious!
-- **Bubble Tea　珍珠奶茶**: Taiwan is the birthplace of bubble tea. Try it at original spots like Chun Shui Tang. My personal favorite is in Shilin with a avocado milk cap on top [大茗本位製茶堂](https://maps.app.goo.gl/JBT2on9RZ3GQt4KeA).
-- **Pineapple Cake　鳳梨酥**: A must-try Taiwanese delicacy, pineapple cakes are sweet and crumbly pastries filled with a tangy pineapple jam, usually accompanied with tea to offset the sweetness. They are a popular souvenir for tourists and a delightful treat with tea. I definintely recommned to buy a lot to take home for friends and family! You can buy at [Chia Te Bakery](https://maps.app.goo.gl/8Xeu2hbTi8Ucqb948) or [Sunny Hills](https://maps.app.goo.gl/FRJAKBek5sHtVzo16) for a less sweet option.
+- **Bubble Tea　珍珠奶茶**: Taiwan is the birthplace of bubble tea. Try it at original spots like Chun Shui Tang. My personal favorite is in Shilin with an avocado milk cap on top [大茗本位製茶堂](https://maps.app.goo.gl/JBT2on9RZ3GQt4KeA).
+- **Pineapple Cake　鳳梨酥**: A must-try Taiwanese delicacy, pineapple cakes are sweet and crumbly pastries filled with a tangy pineapple jam, usually accompanied with tea to offset the sweetness. They are a popular souvenir for tourists and a delightful treat with tea. I definitely recommend to buy a lot to take home for friends and family! You can buy at [Chia Te Bakery](https://maps.app.goo.gl/8Xeu2hbTi8Ucqb948) or [Sunny Hills](https://maps.app.goo.gl/FRJAKBek5sHtVzo16) for a less sweet option.
 - **Tofu Pudding 豆花**: This very traditional dessert is perhaps the mostly commonly eaten dessert in Taiwan. Soft Tofu in either a brown sugar water or soy milk for a less sweet option, plus you choice of additional ingredients. My personal go to are green beans　綠豆, pearled barley　薏仁, and taro balls 芋園. This is found every where essentially. [Here's](https://maps.app.goo.gl/FyRF7in15rW1s6tC9) an interested place if you like cilantro.
 - **Egg Tarts 蛋塔**: Honestly, KFC's egg tarts slap. I whole heartedly recommend people to hop into the closest KFC and try and egg tart. 
 
@@ -181,7 +181,7 @@ Here's an abbreviated list to help you start searching:
 - **FuLong beach**: Good for surfing (entry-level) and plenty of waterfalls/hikes nearby you can check out. Look into Match Mountain or Wufengqi waterfalls. 
 - **Tamsui + Baishawan beach**: End of the red line. Honestly a bit mid imo.
 - **Yangmingshan**: hot springs, hikes and views of Taipei. Check out Qixingshan!
-- **Wualai**: A indigenous people's region. Great area for beginner's river tracing, hot springs, hiking and indiginous foods!
+- **Wulai**: A indigenous people's region. Great area for beginner's river tracing, hot springs, hiking and indiginous foods!
 
 ## Multi-day Trips
 - **Sun Moon Lake**
@@ -193,10 +193,10 @@ Here's an abbreviated list to help you start searching:
 
 ## Earthquakes
 
-aiwan is on the Ring of Fire, so it's often frequented by earthquakes. Even if there's an earthquake, there's nothing to worry about too much in Taipei. The buildings are all built to withstand tremors, and Taipei isn't affected too often. I would the below actions:
+Taiwan is on the Ring of Fire, so it's often frequented by earthquakes. Even if there's an earthquake, there's nothing to worry about too much in Taipei. The buildings are all built to withstand tremors, and Taipei isn't affected too often. I would follow the actions below:
 
 1. Open up your front door. Sometimes buildings may shift a bit making it hard to open doors and escape in case of emergencies.
-2. Duck beneath or next to something stable with few fixtures overhead like a door hinge, a strong table, the refridgerator, etc.
+2. Duck beneath or next to something stable with few fixtures overhead like a door hinge, a strong table, the refrigerator, etc.
 3. Keep a bottle of water in your hotel/apartment.
 4. Keep your phone charged.
 

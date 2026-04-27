@@ -49,7 +49,7 @@ River tracing, also known as river tracing, is a thrilling outdoor activity that
 **Optional:**    
 - Wetsuit or rash guard
 - Waterproof phone case or action camera
-- Personal Touch: small portable tea set & hot water thermus
+- Personal Touch: small portable tea set & hot water thermos
 - Small bluetooth speaker (just don't disturb other tracers) 
 
 **Rent/Buy Locations:**    
@@ -163,12 +163,12 @@ Avoid getting yourself in trouble and avoid these common mistakes:
 **Bring sweets!**    
 Now's not the time to worry about gaining weight. River tracing requires a lot of concentration, core, and fine motor control at all times. This leads to mental and physical exhaustion. Make sure to bring enough food and carbohydrates to power you through the trip.    
 **有備無患 Overpack**     
-A change in conditions could lead to a change in your gear requirements. Because weather can change suddenly in Taiwan, it's best to overpack and accept that you; have some un-used gear. So pack that thermal, pack that extra piece of bread. Who knows? Maybe one of your mates need it, even if you don't!
+A change in conditions could lead to a change in your gear requirements. Because weather can change suddenly in Taiwan, it's best to overpack and accept that you have some unused gear. So pack that thermal, pack that extra piece of bread. Who knows? Maybe one of your mates need it, even if you don't!
 **Watch your feet**    
 There two big dangers in river tracing. One is slipping. This is by far the easiest and most frequent, resulting in mild to sever injuries. I perosnally have gone to the hospital with stitches to my jaw after a few steps without the proper shoes. Walk in a controlled manner and be wary of unstable rocks, shift your weight slowly when uncertain.        
-***Regardless of your level of comfort in rivers abroad, in Taiwan, it is ABSOLUTELY NECESSICARY to wear the river tracing shoes. ABSOLUTELY NO EXCEPTION. Not water shoes, not old sneaker. Only the felt bottom river tracing shoes you can buy or rent in Taiwan.***    
+***Regardless of your level of comfort in rivers abroad, in Taiwan, it is ABSOLUTELY NECESSARY to wear the river tracing shoes. ABSOLUTELY NO EXCEPTION. Not water shoes, not old sneakers. Only the felt bottom river tracing shoes you can buy or rent in Taiwan.***    
 **Don't Swim Alone**    
-The other grand danger of river tracing here in Taiwan are the water ghosts. No joking. Some rivers, espeically near waterfalls can have underwater vortexes,, while not visible from the surface, can drag even experience swimming underwater with no escape. It's absolutely essential to river trace with competent swimmers with a rope or other gear to help pull you out from the water. If you're worried about this, simply swim on the surface, and avoid going too close to the waterfalls.     
+The other grand danger of river tracing here in Taiwan are the water ghosts. No joking. Some rivers, especially near waterfalls can have underwater vortexes, while not visible from the surface, can drag even experience swimming underwater with no escape. It's absolutely essential to river trace with competent swimmers with a rope or other gear to help pull you out from the water. If you're worried about this, simply swim on the surface, and avoid going too close to the waterfalls.     
 **Don't Get Nervous**     
 An abundance of caution will save you from most troubles. Nervousness will get you in trouble. With a bit of elbow grease a slow, focues thought, you can get out of most troubles. The beauty ofriver tracing is that you're usually right next to water. If you're worried about messing up the rock wall climb, then just fall. You may get a scrape or bump a knee. It's important to realize how to mitigate the real dangers: potentially fatal or crippling injuries.     
 It's better to scrape a knee in a controlled fall to the river, than to panic and have an uncontrolled fall and emotional trauma. You can get very injured this way from a small challenge, and you'll be too scared to ever river trace again.      

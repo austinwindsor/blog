@@ -5,6 +5,7 @@ author: austin
 categories: [ admin ]
 image: assets/images/austin.jpg
 featured: False
+published: false
 ---
 
 {:.image-caption}
