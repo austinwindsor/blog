@@ -10,268 +10,376 @@ featured: false
 {:.image-caption}
 *Image courtesy of medium.com*
 
-### Why I Built This Project
+### A Real Analytics Engineering Problem
 
-One of the most interesting problems in analytics engineering is not building a greenfield data model from scratch. It is inheriting two systems that were never designed to work together and then creating a reliable, documented, analytics-ready layer on top of both.
+One of the hardest problems in analytics engineering is not building a clean warehouse from scratch. It is inheriting multiple systems that were never designed to work together, then making them understandable enough to support unified reporting.
 
-That problem shows up constantly during mergers and acquisitions. A company acquires another business, then suddenly needs to answer simple questions like:
+That problem becomes especially painful during mergers and acquisitions.
 
-- What is revenue across both businesses?
-- Which tables describe the same business entity?
-- Are these metrics actually comparable?
-- What assumptions are hidden in the old reporting layer?
+After a merger, a company often has to reconcile two independently evolved databases, each with its own:
 
-Those questions are much harder than they look. The source systems may use different schemas, naming conventions, metric definitions, reporting tables, views, and stored procedures. Documentation is often partial, inconsistent, or missing entirely.
+- schemas
+- naming conventions
+- views and reporting tables
+- stored procedures
+- business definitions
+- documentation quality
 
-That is the motivation behind this portfolio project:
+At that point, even basic questions become expensive:
 
-**an agentic dbt migration assistant for post-merger analytics reconciliation.**
+1. Which tables are actually talking about the same business concept?
+2. Are these fields equivalent or only superficially similar?
+3. Are revenue metrics comparable, or do they encode different business rules?
+4. Which pieces of the legacy reporting logic are safe to migrate into a shared analytics layer?
 
-The goal was to build a prototype that can take two messy legacy-style relational systems, convert each into an interpretable dbt project, enrich that project with business semantics from documentation, compare the projects against each other, and propose a reconciled canonical layer.
+That is the problem this project is trying to solve.
 
-### The Business Problem
+This portfolio project is an **agentic dbt migration assistant for post-merger analytics reconciliation**. It is designed to take two legacy-style relational systems, translate them into interpretable dbt projects, enrich them with semantic information from documentation, compare them at the entity and metric level, and generate a reconciliation plan for a shared canonical analytics layer.
 
-I framed the project around a common post-merger analytics integration scenario.
+The point is not to create a magical autonomous migration engine. The point is to create a system that can accelerate the most time-consuming parts of merger analytics integration while preserving the places where human review is still necessary.
 
-Company A represents a more normalized Brazil-based e-commerce schema inspired by the Olist dataset. Company B represents a messier India-based marketplace reporting environment built from sales reports, P&L extracts, expense files, and warehouse comparisons.
+### Project Goal
 
-Each source has overlapping business concepts:
+The project goal is straightforward:
 
-- orders or sales lines
-- products
-- revenue-like measures
-- reporting views
-- operational reporting tables
+**turn two messy legacy databases into structured, documented, comparable analytics artifacts, then use those artifacts to propose a reconciled dbt-oriented target model.**
 
-But they do not define them in the same way.
+To make the problem concrete, I simulated two source systems:
+
+1. a more normalized Brazil-based e-commerce database
+2. a messier India-based marketplace reporting environment built from sales, expense, warehouse, and P&L extracts
+
+Both contain overlapping business concepts, but they do not define those concepts in the same way.
 
 For example:
 
-1. In Brazil, **recognized revenue** is based on delivered order items.
-2. In India, **reported sales** is based on valid non-cancelled sales lines.
-3. Brazil has a clear **GMV** concept.
-4. India does not expose an equally clear GMV metric.
-5. Brazil has a usable customer identity.
-6. India does not provide an equivalent customer identity in the imported reporting layer.
+- Brazil defines recognized revenue around delivered orders
+- India defines reported sales around non-cancelled positive sales lines
+- Brazil exposes a clear GMV concept
+- India does not expose a clearly equivalent GMV metric
+- Brazil supports a customer identity model
+- India, in this simulated reporting layer, does not
 
-That makes the real challenge semantic, not just structural.
+That means the real challenge is not just translating SQL into dbt. It is identifying where the systems align, where they diverge, and what can be safely mapped into a shared reporting layer.
 
-### What I Wanted the Project to Demonstrate
+### Breaking the Problem into Parts
 
-I wanted this project to show more than “I can call an LLM from Python.”
+To make the problem tractable, I broke it into four parts.
 
-The skills I wanted to surface were:
+#### 1. Structural translation
 
-1. **Analytics engineering**
-   building source, staging, and legacy view layers in dbt-compatible form
-2. **Metadata and lineage thinking**
-   extracting tables, fields, views, and procedures into structured artifacts
-3. **Documentation-first modeling**
-   using business documentation to enrich raw schema outputs
-4. **Semantic reconciliation**
-   comparing similar concepts across systems without pretending they are automatically equivalent
-5. **Appropriate AI orchestration**
-   using deterministic code where possible and agentic reasoning only where ambiguity actually exists
+The first step is purely structural:
 
-### The Architecture
+- parse MySQL schema dumps
+- identify tables, fields, views, and stored procedures
+- generate source-specific dbt starter projects
+- preserve lineage-related artifacts such as view SQL and procedure references
 
-The workflow ended up becoming a hybrid system:
+This part is largely deterministic. If the input is a schema dump, the system can reliably extract the database objects and produce a dbt-compatible structure around them.
 
-1. deterministic code parses MySQL dumps
-2. deterministic code generates dbt starter projects
-3. LLM-assisted extraction turns prose documentation into structured semantic evidence
-4. deterministic enrichment applies that evidence to source, staging, and legacy view YAML
-5. deterministic comparison exports normalized project semantics
-6. deterministic reconciliation generates mapping candidates, semantic conflicts, and a reconciliation plan
-7. a LangGraph workflow orchestrates the whole process and introduces human review where needed
+#### 2. Semantic enrichment
 
-That separation was important. Early on, I had to make a decision about what should be rule-based and what should be agentic.
+The second step is where things stop being fully deterministic.
 
-My conclusion was:
+Enterprise documentation rarely arrives in a neat machine-readable format. It is usually prose with mixed quality, partial definitions, business caveats, and embedded assumptions. It may describe fields, but not consistently. It may describe views and reporting tables at a high level while leaving important transformations implicit.
 
-- **tables, schemas, views, dbt generation, validation, and file writing** should be deterministic
-- **documentation interpretation, ambiguous stored procedures, and semantic reconciliation decisions** are the right places for agentic workflows
+That means the system needs a way to convert documentation into structured semantic evidence, including:
 
-That made the project much more credible than trying to force every step into a general-purpose agent loop.
+- business definitions
+- grain
+- join keys
+- field meanings
+- metric logic
+- caveats
+- evidence excerpts
 
-### What the System Produces
+This is where deterministic logic alone becomes brittle.
 
-For each source system, the workflow generates artifacts such as:
+#### 3. Cross-project comparison
 
-- `schema_inventory.csv`
-- `views.json`
-- `procedures.json`
-- `procedure_lineage.yml`
-- `semantic_evidence.yml/json`
-- `project_semantics.yml/json`
-- a dbt-style project with enriched `sources.yml`, staging model YAML, and legacy view YAML
+Once each source system has both structural and semantic artifacts, the next step is to compare them:
 
-Then, across the two projects, it generates:
+- object to object
+- field to field
+- metric to metric
+- grain to grain
+- caveat to caveat
 
-- `mapping_candidates.yml/json`
-- `semantic_conflicts.yml/json`
-- `reconciliation_plan.yml/json`
+The goal is to generate:
 
-Those final reconciliation artifacts are where the post-merger analytics story becomes clear.
-
-### Why dbt Was the Right Target
-
-I chose dbt because it is a strong intermediate representation for analytics migration work.
-
-dbt gives you:
-
-1. a structured project layout
-2. YAML-based documentation and metadata
-3. model lineage
-4. tests
-5. a natural place to express semantic transformations
-
-Even if a legacy system does not currently use dbt, translating it into a dbt-like structure makes the logic more inspectable and easier to compare against another system.
-
-That makes dbt not just a transformation framework here, but a migration and interpretation layer.
-
-### What Worked Well
-
-Several parts of the project ended up feeling especially strong.
-
-#### 1. Converting raw SQL dumps into interpretable artifacts
-
-The first pass focused on transforming:
-
-- tables
-- fields
-- views
-- stored procedures
-
-into structured metadata and dbt-friendly outputs.
-
-Views were a particularly good fit for deterministic processing because they are bounded, declarative SQL statements. Stored procedures were treated more conservatively: preserve them, preserve referenced objects, and postpone deeper interpretation when necessary.
-
-That distinction ended up being one of the better design decisions in the project.
-
-#### 2. Enriching the dbt project with business semantics
-
-The documentation layer added a lot of value. Instead of leaving the dbt project as a purely structural scaffold, the workflow enriched:
-
-- `sources.yml`
-- `_staging__models.yml`
-- `_legacy_views__models.yml`
-
-with business definitions, grains, caveats, metric logic, join keys, and field-level meanings.
-
-That made the outputs feel much more like analytics engineering deliverables and much less like code generation artifacts.
-
-#### 3. Separating mapping candidates from conflicts
-
-This was important philosophically and practically.
-
-Many migration projects fail because teams jump too quickly from “these look related” to “these are the same thing.”
-
-By separating:
-
-- candidate mappings
+- mapping candidates
 - semantic conflicts
-- canonical reconciliation plans
+- reconciliation plans
 
-the workflow can show overlap without overstating certainty.
+This step can be partly deterministic and partly judgment-driven, depending on how close or ambiguous the mappings are.
 
-That is much closer to how real migration work should be done.
+#### 4. Orchestration and review
+
+Finally, the system needs to coordinate:
+
+- deterministic file generation
+- LLM-based semantic extraction
+- validation
+- reconciliation outputs
+- human review when confidence is low
+
+That is an orchestration problem, not just a parsing problem.
+
+### Constraints That Shaped the Design
+
+A useful migration assistant for merger analytics needs to respect a few real-world constraints.
+
+#### Constraint 1: Not everything should be agentic
+
+Some parts of the workflow are fully deterministic:
+
+- parsing tables and columns
+- generating dbt folders and models
+- writing source YAML
+- exporting inventories
+- serializing metadata artifacts
+
+Using an LLM or agent loop for these steps would add complexity without adding value.
+
+#### Constraint 2: Not everything can be deterministic
+
+Other parts of the workflow are inherently less stable:
+
+- mapping prose documentation into structured field semantics
+- resolving ambiguous business definitions
+- deciding whether two revenue metrics are directly comparable
+- interpreting legacy reporting intent
+
+These are exactly the places where limited agentic reasoning can help.
+
+#### Constraint 3: Human review still matters
+
+Merger reconciliation is not just a technical exercise. It is also a governance exercise.
+
+A system can identify that two concepts look related. It can identify where definitions differ. It can propose a mapping policy. But it should not silently decide that two metrics are equivalent when the business meaning is materially different.
+
+That means the workflow needs to preserve:
+
+- evidence
+- caveats
+- confidence
+- review flags
+
+### Choosing Tools Based on the Problem
+
+The tools in this project were chosen to match the structure of the problem.
+
+#### dbt as the target analytics layer
+
+dbt is a strong target representation for legacy analytics migration because it gives structure to:
+
+- sources
+- staging models
+- legacy-translated views
+- model metadata
+- lineage
+- tests
+- documentation
+
+Even when the source system never used dbt, converting it into a dbt-like structure makes it much easier to inspect and compare.
+
+#### Deterministic Python modules for the structural layer
+
+The structural steps are handled by Python:
+
+- parsing schema dumps
+- extracting views and procedures
+- generating dbt starter projects
+- exporting inventory and lineage artifacts
+- validating semantic evidence
+- comparing project semantics
+- generating reconciliation artifacts
+
+Those steps benefit from being reliable, testable, and repeatable.
+
+#### OpenAI models for the semantic extraction layer
+
+The most important non-deterministic problem in the workflow is documentation interpretation.
+
+A real client database may have documentation that describes:
+
+- raw tables
+- field meanings
+- reporting rules
+- operational caveats
+- metric intent
+
+But those descriptions are often embedded in prose, headings, bullet lists, or half-structured notes. That makes semantic extraction a good LLM use case, especially when the output is constrained to a structured schema and validated afterwards.
+
+The LLM is not being asked to build the whole system. It is being asked to perform a limited job:
+
+**turn messy business documentation into structured semantic evidence that deterministic code can validate and apply.**
+
+#### LangGraph for orchestration
+
+Given the step-like nature of the workflow and the limited but important use of an LLM, LangGraph was a good orchestration choice.
+
+The system has:
+
+- multiple ordered steps
+- deterministic nodes
+- LLM-backed nodes
+- validation boundaries
+- points where human review may be needed
+
+That is a better fit for graph orchestration than for a single free-form agent loop.
+
+In other words, LangGraph is not there because the project needed an “agent” for marketing reasons. It is there because the workflow contains a mixture of deterministic and non-deterministic steps that need to be coordinated cleanly.
+
+### What the Workflow Does
+
+At a high level, the workflow:
+
+1. parses each MySQL dump
+2. generates a dbt starter project for each source
+3. extracts or accepts semantic evidence from documentation
+4. enriches `sources.yml`, staging model YAML, and legacy view YAML
+5. exports normalized project semantics
+6. compares the two projects
+7. emits mapping candidates, semantic conflicts, and a reconciliation plan
+
+The output is not just code. It is a set of human-reviewable artifacts that make the source systems easier to reason about.
+
+### Why This Would Be Useful in a Real Merger
+
+In a real merger setting, the value of this system is speed and structure.
+
+#### Benefit 1: Faster discovery of related tables and reporting objects
+
+Large enterprise databases often contain hundreds of tables, views, and reporting artifacts. A migration assistant that converts those into structured dbt and metadata artifacts can drastically reduce the time it takes to find:
+
+- raw tables with overlapping business roles
+- legacy views that define important metrics
+- reporting tables populated by procedures
+- objects that need deeper review
+
+#### Benefit 2: Better semantic visibility
+
+Most integration pain is semantic, not syntactic.
+
+Two fields may both be called “amount,” but one may mean delivered revenue and the other may mean gross reported sales. By pulling business semantics into structured evidence, the system makes those distinctions visible much earlier.
+
+#### Benefit 3: A more reviewable migration path
+
+Instead of jumping directly from source systems to a canonical model, the workflow creates intermediate artifacts that can be inspected:
+
+- source-specific dbt projects
+- semantic evidence
+- mapping candidates
+- conflict files
+- reconciliation plans
+
+That makes the migration process easier to audit and easier to discuss with stakeholders.
+
+#### Benefit 4: Stronger handoff between engineering and business review
+
+The workflow does not just generate technical outputs. It creates a better interface between:
+
+- analytics engineers
+- data platform teams
+- governance leads
+- business stakeholders
+
+because it can surface not only “what maps,” but also “what does not map cleanly and why.”
 
 ### Pros of This Approach
 
-There are several advantages to this style of system.
+There are several reasons I think this approach is useful.
 
-#### Pro 1: It is realistic about ambiguity
+#### Pro 1: It respects the boundary between deterministic and non-deterministic work
 
-The workflow does not assume that all similar-looking fields or metrics are comparable. It explicitly captures gaps, caveats, and human review points.
+The workflow does not waste LLM calls on tasks that code can do reliably. Instead, it uses LLM reasoning where the input is ambiguous and the output needs interpretation.
 
-#### Pro 2: It produces useful intermediate artifacts
+#### Pro 2: It creates useful artifacts even before full reconciliation
 
-Even before the final reconciliation plan, the generated dbt projects, semantic evidence, and lineage files are already valuable for understanding a legacy system.
+Even if the final canonical layer is not yet approved, the generated dbt projects, lineage files, and semantic evidence are already useful for documentation, discovery, and migration planning.
 
-#### Pro 3: It uses AI where AI is genuinely helpful
+#### Pro 3: It encourages explicit treatment of metric differences
 
-The agentic layer is focused on:
+One of the strongest parts of the workflow is that it does not collapse all similar-looking metrics into one bucket. It forces a distinction between:
 
-- documentation interpretation
-- semantic ambiguity
-- policy questions
-- human-readable reasoning
+- direct matches
+- transformable matches
+- partial matches
+- unresolved conflicts
 
-That is a much better fit than using an LLM to do everything indiscriminately.
+That is much healthier than quietly flattening differences away.
 
-#### Pro 4: It is portfolio-friendly and enterprise-relevant
+#### Pro 4: It scales better than manual schema review alone
 
-This project demonstrates analytics engineering, platform design, metadata thinking, documentation systems, and AI orchestration in one coherent story.
+For large databases, manual schema comparison is expensive. This kind of system can narrow the search space and highlight the parts worth human attention.
 
 ### Cons and Limitations
 
-I also think it is important to be honest about where this kind of system is limited.
+This is not a magic system, and it has real limitations.
 
-#### Con 1: Documentation quality still matters
+#### Con 1: Documentation remains a limiting factor
 
-If the source documentation is incomplete or misleading, the semantic enrichment step becomes weaker. The workflow can help structure ambiguity, but it cannot conjure true business meaning out of nothing.
+The deterministic MySQL-to-dbt mapping is relatively reliable. The semantic enrichment layer is not equally reliable, because it depends on an LLM extracting meaning from enterprise documentation.
 
-#### Con 2: Stored procedure interpretation is still hard
+If the documentation is poor, inconsistent, or incomplete, the enrichment output will be weaker. The workflow can structure ambiguity, but it cannot eliminate it.
 
-Views are tractable. Stored procedures are much more variable. They may contain control flow, temp tables, side effects, and dialect-specific logic that do not translate cleanly into dbt or deterministic lineage.
+#### Con 2: LLM extraction is sensitive to object naming and prompt quality
 
-That is why I treat them conservatively and reserve deeper interpretation for explicit LLM-assisted review.
+Even with validation and normalization, documentation extraction can still produce:
 
-#### Con 3: LLM extraction introduces operational dependencies
+- incomplete object coverage
+- slightly wrong object mappings
+- weak field-level semantics
+- partial or noisy evidence
 
-Once documentation extraction becomes LLM-backed, the workflow depends on model quality, quotas, and prompt robustness. That is manageable, but it means productionizing the system requires fallback behavior and human oversight.
+That means a production-grade version would need stronger prompt tuning, stricter structured output, better evaluation, and fallback review paths.
 
-#### Con 4: Canonical metrics are often policy choices, not just technical mappings
+#### Con 3: Stored procedures remain difficult
 
-A system can identify that two metrics are similar, different, or partially comparable. But deciding whether they should be rolled into a shared enterprise KPI is often a governance decision, not merely a data engineering task.
+Views are often manageable. Stored procedures are much more variable. They can contain control flow, temp tables, update logic, and side effects that do not map neatly into dbt or into a purely structural lineage representation.
 
-### Why I Used LangGraph
+That is why a conservative treatment of procedures remains important.
 
-This project ended up being a very natural fit for LangGraph.
+#### Con 4: Reconciliation still contains governance decisions
 
-The key reason is that it is not a single “chatbot.” It is a stateful, multi-step workflow with:
+The system can help identify likely equivalences and differences. But deciding whether two partially aligned metrics should become one enterprise KPI is often a policy decision, not just a data engineering one.
 
-- deterministic nodes
-- LLM-assisted nodes
-- long-running execution
-- human review checkpoints
-- resumable state
+### What This Project Demonstrates
 
-That is the sort of use case where a graph-based orchestration model makes more sense than a single free-form agent loop.
+For me, the most interesting part of this project is that it demonstrates a practical model for using AI in analytics engineering.
 
-In other words, this project is best understood as a **hybrid agentic workflow**:
+The system is not “AI-first” in the sense of replacing every step with model calls. It is “AI-appropriate” in the sense of:
 
-- workflow backbone for reliability
-- agentic reasoning where ambiguity exists
+- using deterministic tooling for reliable translation and validation
+- using LLM reasoning where the task is semantically ambiguous
+- preserving artifacts for human review
+- making tradeoffs explicit
 
-### How I Would Improve It Next
-
-If I continue developing this project, the next improvements I would prioritize are:
-
-1. stronger structured-output enforcement for documentation extraction
-2. more robust fallback behavior when LLM extraction fails
-3. persistent LangGraph checkpointing for terminal resume flows
-4. better field-level semantic extraction and cleaner generated documentation
-5. richer stored procedure interpretation with explicit confidence scoring
-6. a small UI or report layer to make the reconciliation outputs easier to review
+That feels much closer to how real enterprise data systems should incorporate agentic workflows.
 
 ### Final Thoughts
 
-What I liked most about this project is that it mirrors a real analytics engineering challenge: not just moving data, but making inherited systems understandable, comparable, and governable.
+Post-merger analytics reconciliation is one of those problems that looks deceptively simple until you get close to the source systems.
 
-A lot of AI projects are framed as replacing human judgment. I think a more realistic and useful framing is different:
+On paper, it sounds like a mapping exercise. In practice, it is:
 
-**use deterministic systems to structure what is knowable, and use agentic reasoning to surface and explain what is ambiguous.**
+- a metadata problem
+- a documentation problem
+- a lineage problem
+- a semantic modeling problem
+- and sometimes a governance problem
 
-That is the idea behind this project.
+That is why I found this project so compelling.
 
-The final result is not a magic migration engine. It is a migration assistant that helps teams:
+A useful migration assistant does not need to solve all ambiguity automatically. It needs to reduce the cost of understanding legacy systems, speed up the identification of related entities and metrics, and surface the assumptions that need human judgment.
 
-- understand legacy data systems
-- translate them into a dbt-oriented analytics layer
-- document business semantics
-- compare two independently evolved systems
-- make better reconciliation decisions with clearer evidence
+That is the role I wanted this project to fill.
 
-For analytics engineering, data infrastructure, semantic layer, governance, and AI-ready data platform roles, that felt like exactly the kind of problem worth building around.
+The result is a system that uses:
+
+- deterministic MySQL-to-dbt translation where the problem is structural
+- LLM-based semantic extraction where the problem is interpretive
+- graph orchestration where the workflow needs state, order, and review
+
+For analytics engineering, data platform, semantic layer, governance, and AI-ready enterprise data roles, I think that is a more realistic and more useful model than treating agentic systems as a blanket solution.
