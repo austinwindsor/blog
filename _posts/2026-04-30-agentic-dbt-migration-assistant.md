@@ -3,12 +3,10 @@ layout: post
 title: "Building an Agentic dbt Migration Assistant for Post-Merger Analytics Reconciliation"
 author: austin
 categories: [ data, analytics-engineering, dbt, ai, portfolio ]
-image: assets/images/data_science.jpg
+image: assets/images/robot-study-recon.jpg
 featured: false
 ---
 
-{:.image-caption}
-*Image courtesy of medium.com*
 
 ### A Real Analytics Engineering Problem
 
@@ -37,6 +35,8 @@ That is the problem this project is trying to solve.
 This portfolio project is an **agentic dbt migration assistant for post-merger analytics reconciliation**. It is designed to take two legacy-style relational systems, translate them into interpretable dbt projects, enrich them with semantic information from documentation, compare them at the entity and metric level, and generate a reconciliation plan for a shared canonical analytics layer.
 
 The point is not to create a magical autonomous migration engine. The point is to create a system that can accelerate the most time-consuming parts of merger analytics integration while preserving the places where human review is still necessary.
+
+You can find the codebase on my [GitHub page](https://github.com/austinwindsor/post_merger_dbt_agent_setup).
 
 ### Project Goal
 
@@ -164,6 +164,8 @@ That means the workflow needs to preserve:
 - caveats
 - confidence
 - review flags
+
+![Alt text](assets/images/db-recon-dbt-roadmap.jpg)
 
 ### Choosing Tools Based on the Problem
 
