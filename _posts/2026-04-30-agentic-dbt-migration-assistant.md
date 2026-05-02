@@ -3,7 +3,7 @@ layout: post
 title: "Building an Agentic dbt Migration Assistant for Post-Merger Analytics Reconciliation"
 author: austin
 categories: [ data, analytics-engineering, dbt, ai, portfolio ]
-image: assets/images/robot-study-recon.jpg
+image: assets/images/robot-study-recon.png
 featured: false
 ---
 
@@ -165,7 +165,7 @@ That means the workflow needs to preserve:
 - confidence
 - review flags
 
-![Alt text](assets/images/db-recon-dbt-roadmap.jpg)
+![Project Architecture](assets/images/db-recon-dbt-roadmap.png)
 
 ### Choosing Tools Based on the Problem
 
