@@ -165,7 +165,7 @@ That means the workflow needs to preserve:
 - confidence
 - review flags
 
-![Project Architecture](assets/images/db-recon-dbt-roadmap.png)
+![Project Architecture](../assets/images/db-recon-dbt-roadmap.png)
 
 ### Choosing Tools Based on the Problem
 
